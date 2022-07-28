@@ -1,0 +1,192 @@
+﻿@page "/pcparts"
+@inherits LayoutComponentBase
+@inject IPCitemService PCItemService
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Memory</th>
+      <th scope="col">Cores</th>
+      <th scope="col">Vendor</th>
+      <th scope="col">Type of Component</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Virtual Memory</th>
+    </tr>
+  </thead>
+     <thread>
+                <tr>
+                    <th scope="col">GPU's Section</th>
+                </tr>
+            </thread>
+      @foreach(var p in PCItemService.pclist)
+        {
+         
+            @if(p is GPU T)
+            {
+            
+
+            <thead>
+             <tr>
+             <a href="/PCItem/@T._id"><th scope="col">@T._name</th></a>
+             <th scope="col">@T._memory GB</th>
+             <th scope="col">@T._cores</th>
+             <th scope="col">@T._vendor</th>
+             <th scope="col">@T.typeOfComponent</th>
+             <th scope="col">@T._speed GHz</th>
+             <th scope="col">@T._virtualMemory GB</th>
+             </tr>
+              </thead>    
+            }
+            }
+
+              
+               <thread>
+                <tr>
+                    <th scope="col">CPU's Section</th>
+                </tr>
+             
+            </thread>
+              <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Threads</th>
+      <th scope="col">Cores</th>
+      <th scope="col">Compatable with:</th>
+      <th scope="col">Type of Component</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Boost Speed</th>
+    </tr>
+  </thead>
+            
+        @foreach(var p in PCItemService.pclist)
+        {
+            @if(p is CPU Y)
+            {
+            
+
+            <thead>
+             <tr>
+            <a href="/PCItem/@Y._id"> <th scope="col">@Y._name</th></a>
+             <th scope="col">@Y.threads</th>
+             <th scope="col">@Y.cores</th>
+             <th scope="col">@Y.pCompat</th>
+             <th scope="col">@Y.typeOfComponent</th>
+             <th scope="col">@Y.speed GHz</th>
+             <th scope="col">@Y.boostSpeed GB</th>
+             </tr>
+              </thead>    
+            }
+            }
+
+
+
+
+
+
+
+
+
+               
+               <thread>
+                <tr>
+                    <th scope="col">Motherboards Section</th>
+                </tr>
+             
+            </thread>
+              <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Vendor</th>
+      <th scope="col">Chipset</th>
+      <th scope="col">CPU Socket</th>
+      <th scope="col">FormFactor</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Boost Speed</th>
+    </tr>
+  </thead>
+            
+        @foreach(var p in PCItemService.pclist)
+        {
+            @if(p is Motherboard M)
+            {
+           
+
+            <thead>
+             <tr>
+              <a href="/PCItem/@M._id"><th scope="col">@M._name</th></a>
+             <th scope="col">@M.vendor</th>
+             <th scope="col">@M.chipset</th>
+             <th scope="col">@M.cpuSocket</th>
+             <th scope="col">@M.formFactor</th>
+             <th scope="col">TOBEADDEDLATER</th>
+             <th scope="col">TOBEADDEDLATER</th>
+             </tr>
+              </thead>    
+            }
+            }
+            
+
+
+
+
+                         
+               <thread>
+                <tr>
+                    <th scope="col">RAM Section</th>
+                </tr>
+             
+            </thread>
+              <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Vendor</th>
+      <th scope="col">Size</th>
+      <th scope="col">Generation</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Colour</th>
+      <th scope="col">RGB</th>
+    </tr>
+  </thead>
+            
+        @foreach(var p in PCItemService.pclist)
+        {
+            @if(p is Ram R)
+            {
+           
+
+            <thead>
+             <tr>
+              <a href="/PCItem/@R._id"><th scope="col">@R._name</th></a>
+             <th scope="col">@R.vendor</th>
+             <th scope="col">@R.size</th>
+             <th scope="col">@R.generation</th>
+             <th scope="col">@R.speed</th>
+             <th scope="col">@R.colour</th>
+             <th scope="col">@R.rgb</th>
+             </tr>
+              </thead>    
+            }
+            }
+
+
+            
+ </table>       
+
+ 
+
+    
+
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        PCItemService.LoadPcItems();
+    }
+
+ 
+    }
+
+   

@@ -1,0 +1,31 @@
+﻿<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="counter">Counter</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="fetchdata">Fetch Data</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="pcparts">PC Parts</a>
+  </li>
+  <li class="nav-itemHome">
+    <a class="nav-link">Home</a>
+  </li>
+    <li class="nav-item-basket">
+    <a class="nav-link">Basket</a>
+  </li>
+</ul>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

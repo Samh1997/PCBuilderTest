@@ -1,0 +1,20 @@
+﻿@page "/pcitem/{_id}"
+@inject IPCitemService PCItemService
+
+<h3>PcPartDetails @_id</h3>
+<h3>@pcItem._name</h3>
+
+@code {
+    private PCItem pcItem = null;
+    [Parameter]
+    public string _id{ get; set; }
+
+    protected override void OnInitialized()
+    {
+        if(PCItemService.pclist ==null || PCItemService.pclist.Count == 0)
+        {
+            PCItemService.LoadPcItems();
+        }
+        pcItem = PCItemService.pclist.FirstOrDefault(p => p._id == Int32.Parse(_id));
+    }
+}
