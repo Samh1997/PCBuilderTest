@@ -8,6 +8,7 @@ namespace PcCreator.Services.PCItemService
     public class PCItemService : IPCitemService
     {
         public List<PCItem> pclist { get ; set ; } = new List<PCItem> ();
+        public int counter { get; set; }
 
         public void LoadPcItems()
         {
@@ -24,6 +25,15 @@ namespace PcCreator.Services.PCItemService
         new Ram(9, "Vengeance", "Corsair", 16, RAMGeneration.DDR5, 5600, "Black", false),
         new Ram(10, "CT16G4S", "Crucial", 8, RAMGeneration.DDR4, 2666, "Green", false)
             };
+            
         }
+
+        public int getCount()
+        {
+
+            return counter;
+        }
+
+       
     }
 }

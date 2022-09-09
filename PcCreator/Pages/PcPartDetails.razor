@@ -1,20 +1,93 @@
 ﻿@page "/pcitem/{_id}"
 @inject IPCitemService PCItemService
+@inject IBasketService BasketService
+@inject NavigationManager UriHelper
+@using System.ComponentModel;
 
-<h3>PcPartDetails @_id</h3>
-<h3>@pcItem._name</h3>
+
+    @for(int v =0; v<someValues.Count; v++)
+    {
+        string n1 = someValues.ElementAt(v);
+        <h3>@sortThis(someNames.ElementAt(v), n1)</h3>
+
+    }
+    <button type ="submit" @onclick="@AddNewItemToBasket">Add Item To Basket</button>
+
+   
+
 
 @code {
     private PCItem pcItem = null;
     [Parameter]
     public string _id{ get; set; }
+    AllItems AI = new AllItems();
+
+
+
+
 
     protected override void OnInitialized()
     {
         if(PCItemService.pclist ==null || PCItemService.pclist.Count == 0)
-        {
+        { 
             PCItemService.LoadPcItems();
         }
         pcItem = PCItemService.pclist.FirstOrDefault(p => p._id == Int32.Parse(_id));
+        foreachLoopGetDesc(pcItem);
+        foreachLoopGetName(pcItem);
     }
+
+
+    List<string> fieldValues = typeof(PCItem).GetFields().Select(field => field.Name).ToList();
+    List<string> someValues = new List<string>();
+    List<string> someNames = new List<string>();
+
+
+    public List<string> foreachLoopGetDesc(object o)
+    {
+        object value = null;
+
+        foreach(PropertyDescriptor descriptor in TypeDescriptor.GetProperties(o))
+        {
+            string name = descriptor.Name;
+            value = descriptor.GetValue(o);
+            someValues.Add(value.ToString());
+
+        }
+
+        return someValues;
+    }
+
+    public List<string> foreachLoopGetName(object o)
+    {
+        object value = null;
+
+        foreach(PropertyDescriptor descriptor in TypeDescriptor.GetProperties(o))
+        {
+            string name = descriptor.Name;
+            value = descriptor.GetValue(o);
+            someNames.Add(name);
+
+        }
+
+        return someNames;
+    }
+
+
+    public string sortThis(string one, string two)
+    {
+        string together = one + " : " + two;
+
+        return together;
+    }
+
+    public void AddNewItemToBasket()
+    {
+        int idint = Int32.Parse(_id);
+
+        BasketService.AddBasketItem(idint);
+
+        
+    }
+
 }

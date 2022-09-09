@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace PcCreator.Services.PCItemService
 {
-    interface IPCitemService
+    public interface IBasketService
     {
-        List<PCItem> pclist { get; set; }
-        int counter { get; set; }
-        void LoadPcItems();
 
-        
-        
+        Dictionary<int, int> basket { get; }
+
+        public void AddBasketItem(int pcItem);
+        public void LoadBasketItems();
     }
 }

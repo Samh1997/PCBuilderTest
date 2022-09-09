@@ -7,12 +7,21 @@ using PcCreator.Services;
 using PcCreator.Services.PCItemService;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+
+
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+
 builder.Services.AddScoped<IPCitemService, PCItemService>();
 
+builder.Services.AddScoped<IBasketService, BasketService>();
+
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+
+
 
 await builder.Build().RunAsync();
 
@@ -21,7 +30,7 @@ PCItem gtx3070 = new GPU(1, "GTX 3070", 8, 16, 8, "Geforce", 3.4);
 PCItem gtx3080 = new GPU(1, "GTX 3070", 10, 24, 10, "Geforce", 3.9);
 PCItem gtx3090 = new GPU(1, "GTX 3070", 16, 32, 24, "Geforce", 5);
 //AllItems.Add(newpcpart);
-
+BasketClass bask = new BasketClass();
 
 AllItems aItem = new AllItems();
 

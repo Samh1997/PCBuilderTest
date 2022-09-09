@@ -10,15 +10,35 @@ namespace PcCreator.Shared
     public class AllItems
     {
         public List<PCItem> pcItems { get; set; }
+        public int NumOfItem { get; set; }
 
         public AllItems()
         {
-            pcItems = new();
+            pcItems = new List<PCItem>();
+            
         }
 
-       /* public void addItem(PCItem p)
+        public void AddItemToBasket(PCItem i)
         {
-            pcItems.Add(p);
-        }*/
+            if (pcItems.Contains(i))
+            {
+                NumOfItem++;
+            }
+            else 
+                pcItems.Add(i);
+            
+        }
+
+        public void RemoveItemFromBasket(PCItem i)
+        {
+            if (pcItems.Contains(i) && NumOfItem > 1)
+            {
+                NumOfItem--;
+            }
+            else
+                pcItems.Remove(i);
+                
+        }
+       
     }
 }

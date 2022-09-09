@@ -18,46 +18,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\isamm\Documents\PcCreator\PcCreator\PcCreator
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/App.razor]
-build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/Basket.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFza2V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/PcPartDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGNQYXJ0RGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/PcParts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGNQYXJ0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Pages/PcParts.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGNQYXJ0cy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-mwhj72n1jm
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-798gwuvw5w
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-fqblv1wd7f
-
-[C:/Users/isamm/Documents/PcCreator/PcCreator/PcCreator/Shared/NewLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5ld0xheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-7qhmmg2u6v
